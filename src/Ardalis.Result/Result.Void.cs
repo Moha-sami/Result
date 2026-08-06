@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace Ardalis.Result
 {
@@ -9,16 +9,27 @@ namespace Ardalis.Result
         protected internal Result(ResultStatus status) : base(status) { }
 
         /// <summary>
-        /// Represents a successful operation without return type
+        /// Represents a successful operation without return type.
         /// </summary>
         /// <returns>A Result</returns>
+        /// <example>
+        /// <code>
+        /// var result = Result.Success();
+        /// </code>
+        /// </example>
         public static Result Success() => new();
 
         /// <summary>
-        /// Represents a successful operation without return type
+        /// Represents a successful operation without return type.
+        /// Sets the SuccessMessage property to the provided value.
         /// </summary>
         /// <param name="successMessage">Sets the SuccessMessage property</param>
         /// <returns>A Result</returns>
+        /// <example>
+        /// <code>
+        /// var result = Result.SuccessWithMessage("Operation completed successfully");
+        /// </code>
+        /// </example>
         public static Result SuccessWithMessage(string successMessage) => new() { SuccessMessage = successMessage };
 
         /// <summary>
